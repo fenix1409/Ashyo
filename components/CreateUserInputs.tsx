@@ -18,7 +18,7 @@ const CreateUserInputs: React.FC<CreateUserType> = ({setIsLogin}) => {
             email: (e.target as HTMLFormElement).email.value,
             password: (e.target as HTMLFormElement).password.value
         }
-        instance().post('/auth/user/sign-up', data).then(res => setIsLogin("login"))
+        instance().post('/auth/user/sign-up', data).then(() => setIsLogin("login"))
     }
     return (
         <form onSubmit={handleCreateUser} className='space-y-5' autoComplete='off'>
